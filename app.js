@@ -16,11 +16,8 @@ app.get('/', (request, response) => {
 
 app.post('/', (request, response) => {
   console.log(request.body, request.connection.remoteAddress)
-  return response.send('(POST) Voce me enviou: '
-  + JSON.stringify(request.body)
-  + ', Content-Type: '+ request.headers['content-type']
-  + ', IP: '
-  + request.connection.remoteAddress)
+  return response.send(`(POST) Voce me enviou: ${JSON.stringify(request.body)}, Content-Type: ${request.headers['content-type']}, IP: ${request.connection.remoteAddress}`
+  )
 })
 
 app.put('/', (request, response) => {
